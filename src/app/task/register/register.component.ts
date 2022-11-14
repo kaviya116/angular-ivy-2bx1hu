@@ -9,13 +9,13 @@ import { TryService } from '../../try.service';
 })
 export class RegisterComponent implements OnInit {
   val: any;
-  constructor(private jet:TryService) {}
+  constructor(private jet: TryService) {}
 
   ngOnInit() {
-    this.val=this.jet.arr
+    this.val = this.jet.arr;
   }
   currentIndex: any;
-  
+
   newform = new FormGroup({
     name: new FormControl('', [Validators.required]),
     age: new FormControl('', [
@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
   }
   delete(i: any) {
     this.val.splice(i, 1);
+    alert('Are You Sure You Want Delete');
   }
   update() {
     this.val[this.currentIndex] = this.newform.value;
@@ -58,5 +59,6 @@ export class RegisterComponent implements OnInit {
       mail: this.val[i].mail,
       pswrd: this.val[i].pswrd,
     });
+    alert('You Want Edit The Value');
   }
 }
