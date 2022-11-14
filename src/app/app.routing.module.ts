@@ -12,8 +12,7 @@ import { HomeComponent } from './task/home/home.component';
     RouterModule.forRoot([
      
       { path: 'register', component: RegisterComponent},
-      { path: 'home', component: HomeComponent },
-      { path: '**', redirectTo: 'home' }
+      { path: 'home', component: HomeComponent }
     ])
   ],
   exports: [
